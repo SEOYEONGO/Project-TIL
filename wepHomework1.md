@@ -1,5 +1,5 @@
-## wep-blog project를 하며 알게된 용어 정리.
-### wepHomework1
+## web-blog project를 하며 알게된 용어 정리.
+### webHomework1
 
 1. ruby, gem, jekyll, bundler, msys, ridk, minGW, github pages, gcc, gnu, gpp, cli, gui, unix, linux, shell, kernel, user interface, local repository, remote repository, svn, git 용어 정리
 
