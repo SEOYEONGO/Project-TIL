@@ -173,7 +173,7 @@ CLI(Command Line Interface) 또는 CUI(Character User Interface): 명령줄 인�
 
 ### 15. Linux
 
--> [이 페이지의 9번 참조](#9. gnu   GNU/리눅스)
+-> [이 페이지의 9번 참조](##9. gnu   GNU/리눅스)
 
 
 ### 16. kernel
