@@ -7,17 +7,17 @@
 
 2. 오늘 깃허브 블로그가 곧 올라 갈텐데 어떻게 다운로드 했는지 윈도우즈환경에서 정리
 
->-> Project-TIL/make_GitHubBlog_with_githubpage 문서에 정리.
+>-> [Project-TIL/make_GitHubBlog_with_githubpage 문서에 정리](https://github.com/SEOYEONGO/Project-TIL/blob/main/make_GitHubBlog_with_githubpage.md)
 
 
 3. 도메인, 도메인 네임서버, 도메인 레코드들, 어떻게 도메인 연결했는지.
 
->-> Project-TIL/make_GitHubBlog_with_githubpage 문서에 정리.
+>-> [Project-TIL/make_GitHubBlog_with_githubpage 문서에 정리](https://github.com/SEOYEONGO/Project-TIL/blob/main/make_GitHubBlog_with_githubpage.md)
 
 
 4. 깃허브 브랜치, 포크, 작업 환경에 대해 정리해보기
 
->-> Project-TIL/about_GitHub 문서에 정리. 
+>-> [Project-TIL/about_GitHub 문서에 정리](https://github.com/SEOYEONGO/Project-TIL/blob/main/about_GitHub.md)
 
 
 5. 블로그 사이트 정리, 포트폴리오 내용 정리
@@ -173,7 +173,7 @@ CLI(Command Line Interface) 또는 CUI(Character User Interface): 명령줄 인�
 
 ### 15. Linux
 
--> 이 페이지의 9번 참조.
+-> [이 페이지의 9번 참조](#9. gnu   GNU/리눅스)
 
 
 ### 16. kernel
