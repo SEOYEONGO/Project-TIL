@@ -18,6 +18,9 @@ Today I learned
 
 https://github.com/jwasham/coding-interview-university/blob/master/translations/README-ko.md
 
++ 리틀에디안 
+
+https://genesis8.tistory.com/37
 
 + 배우자 tmux
 
