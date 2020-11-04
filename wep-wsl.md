@@ -171,6 +171,8 @@ bashrc는 bash에서 작업할 때마다 수행되는 파일.
 
 빅엔디안과 리틀엔디안.  -> 공부해두는 게 좋아.
 
+참고 : https://jhnyang.tistory.com/172
+
 유니코드는 한글을 지원해.
 
 Naver의 D2Coding 
