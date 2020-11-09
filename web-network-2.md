@@ -51,15 +51,23 @@
      
  이쯤 난 머리가 삥글삥글 돌기 시작해... 모르는 용어들이 많이 나오그등...<br><br><br>
  
+ **서블릿에 대한 이해가 필요해**
 
  ---
  
  ## 웹 관련 용어 정리<br><br>
  
-TCP/IP<br>
-HTTP<br>
-DNS<br>
-컴포넌트 파일<br>
+TCP/IP<br>  OK
+HTTP<br>   OK 
+DNS<br>   OK 
+컴포넌트 파일  **이건 뭘까?_?**       
+
+웹브라우저 : 인터넷 상에서 HTTP로 작성된 문서...를 웹에서 컨텐츠로 보여주는 응용프로그램이다!
+
+3-4 handshake : 안녕~~~ 데이터 보낸다~~~~ 나 종료한다~~~~
+
+*프록시 서버의 포트번호 : 22
+*HTTP의 웰토운포트 : 80
 
 <br><br>
 ---
@@ -67,11 +75,89 @@ DNS<br>
 HTTP(Hyper Text Transfer Protocol): 하이퍼텍스트 문서를 전달하기 위한 규약<br>
 <br><br>
 ---
+
+* Brute-force : 무작위 대윕 알고리즘<br>
+* 공격키. 개인키. <br>
+* port forwarding -> phpmyadmin????<br>
+* PHP, MySQL<br>
+* 터미널 접속은 22번(?), 22-7777, 22-80번, 윈도우 원격 : 3036, remote protocol(?)<br><br>
+
+--
+* 웹서버는 스태틱합니당...<br>
+* 웹어플리케이션은 동적...<br><br>
+--<br>
+* 자바의 장점은, 어느 환경에서든지 돌아간다는 것인데, 그것은 JVM(자바벌츄얼머신) 덕분입니다!_!<br>
+* JVM의 svervlet은 DataBase랑 뭔갈 주고 받아.<br><br>
+--<br>
+* SELECT *From'user' WHERE id=='Alice'<br>
+-> 이게 무엇이야..?<br><br>
+--<br>
+* 자세한 것은 3-2 고급 웹프로그래밍ㅇ에서 다룰 듯..<br>
+* 클라이언트 사이드(프론트엔드) / 서버 사이드 (백엔드)<br><br>
+--<br>
+* 컴포넌트 파일은 무엇이져..?<br>
+* DNS : 주소->IP, IP-> 주소.<br>
+* HTTP 메소드 종류 : GET과 POST (두개는 특정 리스크(?) 요청), PUT (콘텐츠 저장), Delete(리소스 삭제)<br>
+* HTML과 HTTP<br><br>
+--<br>
+
+* 뭔가 요청이 들어오면, 프록시 서버를 거쳐서, 컨텐츠를 동적 생성한 후 그것을 정적으로 뿌려줘 (웹서버 어플리케이션)<br>
+* 웹서버 : HTTP 요청을 받아서 동적으로 컨텐츠를 생성한다! <br><br>
+
+* 비트나미가 뭐에영? 희희
+
+**
+
+
+---
 ## 클라우드<br><br>
+
+서버는 왜 비싼가... 온도감지도 해줘야 해, 화재가 일어나면 그즉시 산소차단 분말가루(?)를 서버 기계에 촥 뿌려야 해... 관리가 힘들어!
+그래서 서버관리는 관리자에게 맡기는 경우가 대다수.<br>
+
+L<br>
+A  Apache<br>
+M  MySQL<br>
+P  PHP<br>
+
+그렇다..서버 운용과 관리에는 시간과 비용이 들어가니 필요한 자원을 가져다 쓰자는 말이 나왓어! 관리자한테서 우리는 필요한 것만 가져다 쓸게! 라고 하는 거지!_!
+* 그것이 클라우드 서비스얌>.<
+* 데이터 서비스, BTC
+* 1등은 AWS이고 2등은 Google cloud platform Microsoft Azure, 3등은 IBM Clould
+* 사실 AWS 서비스가 사내에서 쓰려고 했는데 너무 좋아서 BTB 서비스로 풀엇는데 반응이 조아써...<br><br>
+
+1. IaaS : Infra structure as a service -> 예) AES의 EC2, Jclould
+2. PaaS : Platfrom as a service -> 예) Deep Racer, RoboMaker, Aleax, 구름아이디(?)
+3. SaaS : Software as a service
+
+* 카톡도 AWS 기반의 서비스엿댕.
+* code deploy 기능..아마 SaaS(?)
+
+
 ---
 ## 실습<br><br>
 
 실습1 : AWS EC2 서버 만들기<br><br>
+
+* 인스턴스 유형...C는 cpu power, i?, t? 코어 갯수..?
+* gpu 머슨은 좀 비싸..하루애 10만원?
+* 스팟인스턴스는...다른 유저의 남는 공간을 시간 단위로 빌려오는 것이야.
+* Clouldwatch는... 모니터링을 해준다?
+* 보안그룹은...외부에서 나한테 접근하려면 어떻게 해야하는지 설정해야 하는 것인가(?)
+* 개인키/공격키
+* CA : 인증서, Certification Auzthorization
+* AWS Educate Starter Account는... 요금 오버되는 것을 막아요.. 1시간에 100원? 
+* AWS의 제품군이 굉장히 많아요
+* Amazon Elastic Clould 
+* 서버용 CPU가 따로있어.
+* 이더넷은 컴퓨터를 연결하는 체계야 (TCP/IP)
+* 온디맨드가 머더라? 아아 사용자의 요구만큼만 사용하는 것이얌
+* AMI(?)
+
+
+
+
+
 
 --
 
