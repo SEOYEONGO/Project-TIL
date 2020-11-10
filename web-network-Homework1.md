@@ -6,29 +6,204 @@
 
 - 용어 정리 (모두)<br>
 
-* Well-known port
-* proxy server
-* Remove Proxy
-* Circuit Switching
-* Packet-Switched
+* Well-known port<br>
+Well-known port란, 특정한 쓰임새를 위해서 IANA에서 할당한 TCP 및 UDP 포트 번호의 일부이다.
 
-* CMS
-* CDN
-* TCP/IP
-* Hyper Text
-* DNS
-* HTTP
-* Web Server
-* WAS
-* Mark-up
-* Mark-down
+    * 포트 번호 : 호스트에서 동작하는 애플리케이션에 데이터를 배분하기 위해, 각각의 애플리케이션을 식별할 때 이용하는 것! 
+    * 포트 번호 : TCP/IP의 애플리케이션을 식별하는 식별 번호 (TCP 또는 UDP 헤더에 지정함)
+    * 웰노운 포트 번호 : 웹브라우저의 요청을 기다릴 때 이용하는 것!_! 서버 애플리케이션을 실행하면, 웰노운 포트 번호로 클라이언트 애플리케이션의 요청을 기다린다.
+<br><br>
+* proxy server<br>
+proxy server란, 웹사이트 접속을 대행하는 서버이다.
+   
+    * 관리자 입장에서 보는 프록시 서버의 목적
+    1. 클라이언트의 웹브라우저에서 접속하는 웹사이트를 확인한다.
+    관리자가 프록시 서버를 이용하는 목적 중 하나는 클라이언트 PC의 웹브라우저에서 어떤 웹사이트에 접속하는지 확인하는 것이다. 프록시 서버로 각 클라이언트 PC의 웹브라우저에서 어떤 URL의 웹     사이트에 접속하는지 모두 알 수 있다. 직원이 업무에 관계없는 웹사이트에 접속하는지 확인할 수 있다.
 
-* HTML 
-* CSS
-* JS
-* Web Browser 
-* Port forwarding
-* Brute force
-* Web Server
-* Web Application Server
-* Web Application
+    2. 부정한 웹사이트에 접속할 수 없게 한다.
+    프록시 서버를 이용하면 부정한 웹사이트에 접속할 수 없게 제한할 수 있다. 웹사이트에 대한 접속 제한을 URL필터링 또는 웹필터링이라고 부른다.
+
+<br><br>
+* Remove Proxy<br>
+음...각 웹 브라우저에서 프록시 설정을 비활성하는 것을 의미하는 가요?<br><br>
+
+---
+
+* Circuit Switching<br>
+Circuit Switching은 TCP/IP 방식을 이용하기 전에 사용했던 네트워크 통신 방식이야. (회선 교환 방식) <br>
+응답하라 시리즈에서 아들이 컴터하고 잇는데 1층에서 전화오면 컴터가 끊겻던 상황을 생각하면 돼.<br><br>
+그게 왜 그러냐면, Circuit Switching 를 이용해서 그러는데, <br>
+이것은 발신자-수신자 기기 간의 폐쇄적이고 독립적인 1:1 독점 전송 방식이야.<br><br>
+
+
+>Circuit Switching은 정보를 발신자와 수신자의 단말기(이들을 연결하는 네트워크의 노드와 회선도 포함) 간에 독립적이고 폐쇄적인 1대 1의 경로를 설정하여 전송하는 방식을 의미한다.
+이와 같은 1대 1의 경로를 회선(circuit) 또는 채널(channel)이라고 한다. 회선 교환 방식의 장점은 연결이 안정적으로 이루어진다는 것이지만
+단점은 네트워크 자원이 많이 소모된다는 것이다.  기존에는 유무선 통신 네트워크가 회선교환방식을 채택.
+
+<br><br>
+이것이 왜 문제가 되었니?   => 네트워크 자원이 너무 많이 소모됨, 회선 단절에 취약, 사용 중이면 기다림.  (동시 접속이 어렵고 연결이 불안정해.)<br><br>
+
+
+망을 여러 개 만들면? => 일부 회선이 단절되더라도 다시 연결 가능<br>
+
+=> 하지만 중간에 연결이 끊어지면 다시 연결 가능한 망을 찾아 연결 시도. 비효율적<br><br>
+
+* Packet-Switched <br>
+
+그래서 뭐가 나왔어? 바로 **Packet Switched**이야! <br>
+
+가능한 망을 계속 찾지 않아도 연결을 유지할 수 있는 방법? => 데이터를 작게 잘라서 보내자!(Packet) <br>
+-
+=> 하지만 중간에 잘게 쪼개진 패킷들이 무결성을 위반하면?(순서가 뒤죽박죽 되거나 내용이 빠지거나) <br><br>
+
+* TCP/IP <br>
+
+#### 요때 TCP를 부를거야. (Transfer Control Protocol)
+
+패킷 통신을 한 후 목적지에서 검사, 빠진 내용이나 잘못된 데이터는 다시 요청해서 받음
+
+=> 하나의 회선에서도 여러 명이 동시에 통신이 가능해짐<br><br>
+
+ 
+    데이터가 패킷으로 분할, 정보의 발착신지가 헤더에 표시되어 전송되고 패킷이 무결성을 침해하면 재전송
+
+    인터넷 통신 대부분이 패킷통신을 기본으로 하고 있고 TCP/IP는 이런 패킷통신을 위한 인터넷의 규약임
+    
+    IP: 데이터의 조각들을 최대한 빨리 목적지로 보내는 역할(보내는데 집중)
+    TCP: 내용 무결성 검증
+    
+
+<br><br>
+TCP는 무결성 검증을 해줘. 전송 시간은 빠르지 않아도  안전성이 높지.<br>
+UDP는 User Datagram Protocol 이라고... 무결성 검증을 안해. 전송 시간이 빠르다는 장점이 있는데 안전성은 낮지.   (스타그래프트에 UDP 모드가 있다.)<br><br>
+
+다시 복습을 해보자.. IP는 패킷 통신 방식으로 데이터들을 잘게 쪼개서 보내는 방식인데, 순서가 뒤죽박죽이 되거나 내용이 빠지면 어케..그럼 돼 안돼? 안되지! <br>
+그럴 때 누구를 부른다? Tranfer Control Protocal! TCP를 부른다. 이 아이는 뭐다? 무결성 검증을 해주는 친구다! <br>
+
+---
+<br><br>
+* CMS <br>
+Contents Management System
+게시판, 레이아웃, 모듈과 같은 기능을 모아둔 웹 프레임워크이다. CMS를 사용하면 클릭 한번으로 사이트를 만들 수 있다.
+
+게시판 관련 기능 같은 기본적인 작업을 자동화시키기 때문에 웹 사이트 제작에 드는 시간이 많이 감소된다. 그만큼 개발속도로 빨라진다. 기본적으로 파일/썸네일/캐시/등 프레임워크 단위의 도구가 있기 때문에 새로운 기능을 만들 때도 간단하게 구현이 가능하다.<br><br>
+
+**잠깐! 웹프레임워크란?**
+
+>웹 프레임워크(Web framework) 또는 웹 애플리케이션 프레임워크(Web application framework)는 웹 서비스 개발을 위한 프레임워크이다. Java의 Spring, Python의 Django, Node.js의 Express, PHP의 Laravel, Ruby의 Ruby on Rails 등이 특히 유명하다. 웹 프레임워크를 사용하면 쉽고 빠르게 웹사이트를 만들 수 있다.
+
+ > 웹 프론트엔드용 SPA 프레임워크에는 AngularJS나 Angular(Angular 2), Vue.js, React 등이 있다. AngularJS와 Vue.js는 JavaScript, Angular는 TypeScript 기반이다.
+
+> Spring이나 Django, Ruby on Rails의 경우 풀 스택(Full-stack) 웹 프레임워크이다. 
+    풀 스택은 "모든 분야에 다 능숙한"이라는 의미로, 풀 스택 웹 프레임워크면 웹 개발에 필요한 요소를 모두 갖춘 웹 프레임워크이다. 
+    풀 스택 웹 개발자는 프론트엔드와 백엔드 개발이 모두 가능한 개발자를 말한다.
+
+> 마이크로(Micro) 프레임워크는 풀 스택 프레임워크가 아닌 것을 말한다. Python의 Flask나 Ruby의 Sinatra 등이 여기에 해당된다.
+
+    출처: 나무위키
+
+---
+<br><br>
+* CDN <br>
+CDN(Contents Delivery Network)은 지리적 물리적으로 떨어져 있는 사용자에게  컨텐츠 제공자의 컨텐츠를 더 빠르게 제공할 수 있는 기술을 말합니다.<br>
+CDN은 “느린 응답속도/다운로딩 타임”을 극복하기 위한 기술!<br>
+출처 : https://cdn.hosting.kr/cdn%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94/ 
+>요기에 아주 잘 설명되어 있다~~  근데 아직 잘 모르겟다...
+
+---
+
+
+* Hyper Text <br>
+'하이퍼텍스트'란 복수의 문서를 연결해 서로 참조할 수 있는 문서!
+<br><br>
+* Mark-up <br>
+마크업 : 시작 태그와 종료 태그로 요소를 감싸는 것! <title></title>
+<br><br>
+* Mark-down <br>
+마크다운 : Markdown은 웹 작성자를위한 텍스트 -HTML 변환 도구입니다. Markdown을 사용하면 읽기 쉽고 쓰기 쉬운 일반 텍스트 형식을 사용하여 작성한 다음 구조적으로 유효한 XHTML (또는 HTML)로 변환 할 수 있습니다.
+
+---
+<br><br>
+* DNS <br>
+DNS는 이름해석 방법 (호스트명에서 IP 주소를 구하는 방법) 이다!_! 
+
+사용자가 URL 등으로 애플리케이션의 주소를 지정하면, **호스트 이름에 대응하는 IP 주소를 자동으로 구하는 것이 DNS의 역할**
+
+>네트워크의 공통 언어로 되어 있는 TCP/IP로 통신할 때는 통신 상대방의 IP 주소를 반드시 지정해야만 함. IP 주소가 필요하다고는 해도, 애플리케이션을 이용하는 사용자가 IP주소를 이해하기엔 어려워. 그래서, 애플리케이션이 동작하는 서버는 클라이언트 PC 등의 호스트에 사용자가 이해하기 쉬운 이름인 호스트명을 붙인다.
+
+* TCP/IP 통신에 필요한 IP 주소는 TCP/IP 네트워크의 전화번호부인 DNS에 문의해서 조사한다. 
+
+* [자세한 것은 요기를 참고](https://github.com/SEOYEONGO/Project-TIL/blob/main/web-network-book-1.md)
+
+
+---
+<br><br>
+ * HTML  <br>
+HTML은 웹페이지의 구성 요소.
+HTML (Hypertext Markup Language,하이퍼텍스트 마크업 언어)는 우리가 보는 웹페이지가 어떻게 구조화되어 있는지 브라우저로 하여금 알 수 있도록 하는 마크업 언어이다.
+>프로그래밍 언어는 아님.
+
+---
+
+* HTTP <br>
+HTTP는, 웹사이트를 구성하는 HTML 파일을 전송하기 위해 이용하는 통신규약.<br>
+HTTP(Hyper Text Transfer Protocol)는, 하이퍼텍스트를 전송하는 프로토콜임.<br>
+
+>단, HTTP는 HTML 파일 뿐만 아니라, 다양한 종류의 파일을 전송하는 범용적인 프로토콜로도 이용 가능.
+
+      HTTP 파일 전송은 HTTP 리퀘스트(요청)와 HTTP 리스폰스(응답)를 주고 받으면서 이루어짐
+
+  * [자세한 설명은 요기로](https://github.com/SEOYEONGO/Project-TIL/blob/main/web-network-book-2.md)
+ 
+ ---
+<br><br>
+* Web Application <br>
+웹브라우저를 유저 인터페이스로 이용하는 애플리케이션을 웹 애플리케이션이라고 한다
+
+      앱은 DB를 질의하고 데이터를 가공하여 제공하는 역할을 담당합니다. Django, Flask, PHP, JSP, ASP등등 예로 들 수 있습니다.
+
+* Web Browser <br>
+웹사이트에 접속하기 위해 이용하는 애플리케이션이 바로 웹브라우저이다. (Google Chrome, Microsoft Edge/Internet Explorer, Mozlia Firefox, Apple Safari가 있다.) 웹브라우저는 대개 특별한 설정을 할 필요가 없다. 단, 프록시 서버를 이용할 때는 프록시 서버의 IP 주소와 포트 번호를 설정한다. 또한, 웹서버에는 웹서버 애플리케이션이 필요하다. 주요 웹서버 애플리케이션으로는 'Apache'나 'Microsoft IIS'가 있다. 웹서버 애플리케이션에는 공개할 웹사이트의 파일을 저장한 장소(디렉터리) 등을 설정할 필요가 있다.
+
+
+* Web Server <br>
+WAS와 앱서버는 동의어.<br>
+* WAS <br>
+웹어플리케이션 서버. 아래를 참조. <br>
+* Web Application Server <br>
+ 
+      WAS와 앱서버는 동의어입니다. 앱서버는 웹서버와 앱 사이의 동적인 정보를 생성하는 역할을 담당하는 미들웨어입니다. 웹서버는 앱을 알지 못하고, 반대로 앱은 웹서버에 대하여 알지 못합니다. 따라서 앱서버가 가운데에서 중간다리 역할을 한다고 생각하면 이해하기 쉽습니다.
+     
+- [여기 쉽게 설명해놓았다 가보장](https://medium.com/@chrisjune_13837/web-%EC%9B%B9%EC%84%9C%EB%B2%84-%EC%95%B1%EC%84%9C%EB%B2%84-was-app%EC%9D%B4%EB%9E%80-692909a0d363)
+
+     클라이언트에서 서버에 HTTP 요청을 보내면 웹서버가 해당 내용이 정적파일에 대한 요청인지 확인후, 맞으면 그대로 응답합니다. 아니라면 WAS에 요청을 넘깁니다. WAS는 해당 요청을 App이 알 수 있는 형태로 넘기고 App에서 실질적인 데이터를 처리하여 응답합니다.
+     
+     
+---
+<br><br>
+* CSS <br>
+CSS(Cacading Style Sheets)는 HTML과 함께 웹 표준의 기본 개념. HTML이 텍스트나 이미지, 표 같은 요소를 웹 문서에 넣어 뼈대를 만드는 것이라면, 
+CSS는 텍스트 색상이나 크기, 이미지 크기나 위치, 표 색상, 배치 방법 등 웹 문서의 디자인 요소를 담당한다.
+
+* JS <br>
+프로토타입기반의 객체지향 프로그래밍 언어로, 스크립트 언어에 해당된다. 오늘날 HTML, CSS와 함께 웹을 구성하는 요소 중 하나.
+
+
+* 변수안에 값을 저장할 수 있습니다. 위의 예시를 보면, 작성된 새로운 이름을 name이라는 변수에 저장하였습니다.
+* 프로그밍에서 '문자열(strings)'이라고 불리는 문자들도 조작 가능합니다. 위 예시에 보면 "Player 1:"이라는 문자열을 name이라고 만든 변수와 겹합하여 "Player 1: Chris"라는 글을 완성할 수 있었습니다.
+* 웹 페이지상의 이벤트에 응답하는 코드를 작성할 수 있습니다. 예제에서 사용한 click 이벤트를 통해 요소가 언제 클릭되고, 텍스트 라벨을 업데이트 시킬지 정정의하였습니다.
+
+>웹 페이지를 자동차에 비유하자면, HTML은 자동차의 뼈대, CSS는 자동차의 외관, JavaScript는 자동차의 동력이라고 볼 수 있다.
+
+- [친해지자JS](https://developer.mozilla.org/ko/docs/Learn/JavaScript/First_steps/What_is_JavaScript)
+
+---
+
+
+* Port forwarding <br>
+Port forwarding이란, 공유기에게 이정표를 달아주는 것을 말한다...?  (아직 이 부분은 모르겟심더)
+   * [공부하자] (https://storytown.tistory.com/14)
+
+* Brute force <br>
+Brute force은 무차별 대입을 말한다. 
+   * [참고] (https://m.mkexdev.net/426)
